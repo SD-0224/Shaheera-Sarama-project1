@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,500;6..12,700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --brand-primary: #0768AC;
+    --brand-secondary: #03C180;
+    --bg-default: #FFF;
+    --bg-body: #F0F9FF;
+    --lines-color: #DDD;
+    --body-text: #333;
+    --heart-color: #DC143C;
+}
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+.container{
+    width: 90%;
+    margin: auto;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Start Header */
+header{
+    box-shadow: 0 0 10px #ddd;
+}
+header nav{
+    padding: 15px 0;
+}
+header nav .logo a{
+    text-transform: capitalize;
+    color: var(--brand-primary);
+    font-weight: bold;
+}
+header nav .buttons li{
+    margin-right: 10px;
+    border: 1px solid var(--lines-color);
+    padding: 5px 10px;
+}
+header nav .buttons li ion-icon,header nav .buttons li a{
+    color: var(--body-text);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+header nav .buttons li ion-icon{
+    margin-right: 5px;
+}
+/* End Header */
+
+/* Start Welcome Section */
+.welcome{
+
+}
+.tri{
+    display: flex;
+    align-items: center;
+} 
+.triangle-right{
+    width: 0;
+    height: 0;
+    border-top: 0vh solid transparent; 
+    border-left: 50vw solid var(--brand-primary); 
+    border-bottom: 10vh solid transparent; 
+}
+.triangle-left{
+    width: 0;
+    height: 0;
+    border-top: 0vh solid transparent; 
+    border-right: 50vw solid var(--brand-secondary); 
+    border-bottom: 10vh solid transparent; 
+}
+.welcome .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome .text{
+    margin-top: -25px;
+}
+.welcome h1{
+    color: var(--brand-secondary);
+}
+.welcome p{
+    color: var(--body-text);
+}
+/* End Welcome Section */
+
+/* Start Main Section */
+main{
+    margin-top: 30px;
+    background-color: var(--bg-body);
+    padding: 20px 0;
+}
+main .search{
+    position: relative;
+}
+main .search input{
+    width: 80%;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 8px 8px 8px 25px;
+    background-color: #fff;
+    border: none;
+    border: 2px solid var(--lines-color);
+    border-radius: 5px;
+    color: #929292;
+}
+main ion-icon{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-size: 16px;
+}
+/* End Main Section */
+
