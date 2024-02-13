@@ -1,3 +1,13 @@
+// let cid = localStorage.getItem('Cid');
+
+// function fetchJSONData() {
+//     fetch("assets/js/topics.json")
+//     .then(res=>res.json()).then(data=>{
+//         console.log(data);
+//     })
+// }
+// fetchJSONData();
+
 let courses = [
     {
         category: "Web Development Languages",
@@ -720,10 +730,15 @@ let courses = [
     },
 ];
 
-let data = ``;
-courses.map((course) => {
-    let integerPart = parseInt(course.rating); 
-    let decimalPart = course.rating - integerPart;
+
+let cid = parseInt(localStorage.getItem('Cid'));
+let singleCourse = courses.find((course)=>{
+    return course.id == cid;
+})
+console.log(singleCourse);
+
+let integerPart = parseInt(singleCourse.rating); 
+    let decimalPart = singleCourse.rating - integerPart;
     let starHtml = '';
     for(let i = 0;i < integerPart;i++){
         starHtml+= '<ion-icon name="star"></ion-icon>';
@@ -741,37 +756,46 @@ courses.map((course) => {
             starHtml+= '<ion-icon name="star-outline"></ion-icon>'
         }
     }
-    data += `
-    <div class="course-box">
-        <img src="assets/imgs/courses/${course.image}" alt="">
-        <div class="course-box-text">
-            <div class = "courses-headings">
-                <h2 class="capitalize">${course.category.length === 41 ? course.category.substring(0, 30).concat('...') : course.category}</h2>
-                <h3><a onclick = details(${course.id})>${course.topic.length === 52 ? course.topic.substring(0, 33).concat('...') : course.topic}</a></h3>
-        </div>
-        <div class="stars">
-            ${starHtml}
-        </div>
-        <p class="capitalize">author: ${course.name}</p>
+let data = `<div class="course-details-text">
+    <h2>${singleCourse.category}</h2>        
+    <h3>${singleCourse.topic}</h3>   
+    <div class="stars">
+        ${starHtml}
+    </div>
+    <p class="course-desc">
+    ${singleCourse.description}
+    </p>
+</div>
+
+<div class="course-detail-box">
+    <img src=assets/imgs/courses/${singleCourse.image} alt="">
+    <div class="course-detail-box-content">
+        <p class="author"><span>${singleCourse.topic}</span> by <a href="" class="capitalize">${singleCourse.name}</a></p>
+        <div class="course-detail-box-fav">
+            <p>intreseted about this topic?</p>
+            <a href="" class="capitalize">add to favourite <ion-icon name="heart-outline"></ion-icon></a>
+            <p class="cred capitalize">unlimted credits</p>
         </div>
     </div>
-    `;
-});
-document.getElementById("courses-content").innerHTML = data;
+</div>`;
 
-// document.getElementById('dark').addEventListener('click',(e)=>{
-//     e.preventDefault();
-//     document.body.style.backgroundColor = '#1A1A1A';
-//     document.body.style.color = '#EDEDED'
-// })
+document.getElementById('course-datails').innerHTML = data;
+
+let subs = singleCourse.subtopics;
+console.log(subs);
+let tableContent = `
+<h4 class="capitalize"> <span>${singleCourse.topic}</span> sub topics</h4>
+                <ul>
+                ${subs.map((sub) => `
+                <li>
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    <a href="">${sub}</a>
+                </li>`
+            ).join('')}
+                </ul>`;
+
+document.getElementById("table-content").innerHTML = tableContent;
 
 
-// Dark 
-// Flex last element => flex grow 0
-
-
-
-function details(id){
-    localStorage.setItem('Cid',id);
-    window.location = 'details.html';
-}
+//responsive 
+//background

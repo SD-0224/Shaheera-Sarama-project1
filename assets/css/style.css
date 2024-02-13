@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,500;6..12,700&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --brand-primary: #0768AC;
     --brand-secondary: #03C180;
     --bg-default: #FFF;
@@ -13,113 +15,546 @@
     --body-text: #333;
     --heart-color: #DC143C;
 }
-body{
+
+body {
     font-family: 'Nunito Sans', sans-serif;
+    overflow-x: hidden;
 }
-.container{
+
+.container {
     width: 90%;
     margin: auto;
 }
-a{
+
+a {
     text-decoration: none;
 }
-ul{
+
+ul {
     list-style: none;
 }
-.flex{
+
+.flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.capitalize {
+    text-transform: capitalize;
+}
+
 /* Start Header */
-header{
+header {
     box-shadow: 0 0 10px #ddd;
 }
-header nav{
+
+header nav {
     padding: 15px 0;
 }
-header nav .logo a{
+
+header nav .logo a {
     text-transform: capitalize;
     color: var(--brand-primary);
     font-weight: bold;
 }
-header nav .buttons li{
+
+header nav .buttons li {
     margin-right: 10px;
     border: 1px solid var(--lines-color);
     padding: 5px 10px;
+    border-radius: 8px;
 }
-header nav .buttons li ion-icon,header nav .buttons li a{
+
+header nav .buttons li ion-icon,
+header nav .buttons li a {
     color: var(--body-text);
     text-transform: capitalize;
     font-weight: 500;
 }
-header nav .buttons li ion-icon{
+
+header nav .buttons li ion-icon {
     margin-right: 5px;
 }
+
 /* End Header */
 
 /* Start Welcome Section */
-.welcome{
+.welcome {}
 
-}
-.tri{
+.tri {
     display: flex;
     align-items: center;
-} 
-.triangle-right{
+}
+
+.triangle-right {
     width: 0;
     height: 0;
-    border-top: 0vh solid transparent; 
-    border-left: 50vw solid var(--brand-primary); 
-    border-bottom: 10vh solid transparent; 
+    border-top: 0vh solid transparent;
+    border-left: 50vw solid var(--brand-primary);
+    border-bottom: 10vh solid transparent;
 }
-.triangle-left{
+
+.triangle-left {
     width: 0;
     height: 0;
-    border-top: 0vh solid transparent; 
-    border-right: 50vw solid var(--brand-secondary); 
-    border-bottom: 10vh solid transparent; 
+    border-top: 0vh solid transparent;
+    border-right: 50vw solid var(--brand-secondary);
+    border-bottom: 10vh solid transparent;
 }
-.welcome .container{
+
+.welcome .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.welcome .text{
+
+.welcome .text {
     margin-top: -25px;
 }
-.welcome h1{
+
+.welcome h1 {
     color: var(--brand-secondary);
 }
-.welcome p{
+
+.welcome p {
     color: var(--body-text);
 }
+
 /* End Welcome Section */
 
 /* Start Main Section */
-main{
+main {
     margin-top: 30px;
     background-color: var(--bg-body);
     padding: 20px 0;
 }
-main .search{
+
+main .search {
     position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px #ddd;
 }
-main .search input{
+
+main .search input {
     width: 80%;
     font-family: 'Nunito Sans', sans-serif;
-    padding: 8px 8px 8px 25px;
+    padding: 8px 8px 8px 30px;
     background-color: #fff;
     border: none;
-    border: 2px solid var(--lines-color);
+    border: 1px solid var(--lines-color);
     border-radius: 5px;
     color: #929292;
+    height: 40px;
 }
-main ion-icon{
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    font-size: 16px;
-}
-/* End Main Section */
 
+main .search ion-icon.search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+main .select {
+    width: 11%;
+    background-color: white;
+    font-size: 10px;
+    border: 1px solid var(--lines-color);
+    height: 40px;
+    margin-left: -2px;
+    padding: 5px 20px 5px 10px;
+    text-transform: capitalize;
+    position: relative;
+}
+
+main .selcet-bottom {
+    padding-top: 3px;
+}
+
+main .search p.def {
+    font-weight: 500;
+}
+
+main ion-icon.arrow-icon {
+    position: absolute;
+    right: 8px;
+}
+
+.courses-content {
+    margin-top: 20px;
+}
+
+.courses {
+    margin: 20px 0;
+}
+
+.courses-text p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.courses-content {
+    flex-wrap: wrap;
+}
+
+.course-box {
+    width: 19%;
+    background-color: var(--bg-default);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    height: 270px;
+}
+
+.course-box:nth-last-child(1) {
+    visibility: hidden;
+}
+
+.course-box img {
+    width: 100%;
+    height: 120px;
+    transition: 0.5s;
+}
+
+.course-box:hover img {
+    transform: scale(0.99);
+}
+
+.course-box-text {
+    padding: 15px;
+}
+
+.courses-headings {
+    height: 50px;
+}
+
+.courses-headings a{
+    cursor: pointer;
+}
+
+.course-box-text h2 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.course-box-text h3 {
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.course-box-text h3 a {
+    text-transform: capitalize;
+    color: var(--body-text);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.course-box-text .stars {
+    margin: 12px 0 10px;
+}
+
+.course-box-text .stars ion-icon {
+    color: #E29916;
+    font-size: 14px;
+    margin-right: 0px;
+}
+
+.course-box-text p {
+    color: #929292;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* End Main Section */
+/* Start Footer */
+footer {
+    background-color: var(--bg-body);
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+footer ion-icon {
+    color: var(--heart-color);
+    font-size: 22px;
+    display: inline-block;
+    margin-bottom: -5px;
+    font-weight: 700;
+}
+/* End footer */
+
+/* Small Screen */
+@media(min-width:319px) and (max-width:767px) {
+    header nav .logo a {
+        font-size: 14px;
+    }
+
+    header nav .buttons li a {
+        display: none;
+    }
+
+    header nav .buttons li ion-icon {
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    .triangle-right {
+        border-bottom: 3vh solid transparent;
+    }
+
+    .triangle-left {
+        border-bottom: 3vh solid transparent;
+    }
+
+    .welcome .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome .text {
+        margin-top: 5px;
+    }
+
+    .welcome h1 {
+        color: var(--brand-secondary);
+        font-size: 16px;
+    }
+
+    .welcome p {
+        color: var(--body-text);
+        font-size: 14px;
+    }
+
+    main .search {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main .search input {
+        width: 100%;
+        font-family: 'Nunito Sans', sans-serif;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    main .search ion-icon.search-icon {
+        top: 12px;
+    }
+
+    main .select {
+        width: 50%;
+        margin-right: 0px;
+        margin-top: -1px;
+    }
+
+    main .select.sort {
+        border-radius: 0px 0px 0px 5px;
+        margin-left: 0px;
+    }
+
+    main .select.filter {
+        border-radius: 0px 0px 5px 0;
+    }
+
+    .courses {
+        margin-bottom: 0px;
+    }
+
+    .course-box {
+        width: 100%;
+        height: 270px;
+    }
+
+    .course-box:nth-last-child(1) {
+        display: none;
+    }
+}
+
+/* Meduim Screen */
+@media(min-width:768px) and (max-width:922px) {
+    header nav .logo a {
+        font-size: 14px;
+    } 
+    .triangle-right {
+        border-bottom: 5vh solid transparent;
+    }
+
+    .triangle-left {
+        border-bottom: 5vh solid transparent;
+    }
+    .welcome .text {
+        margin-top: 0px;
+    }
+    main .search {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    main .search input {
+        width: 100%;
+        font-family: 'Nunito Sans', sans-serif;
+        border-radius: 5px 5px 0px 0px;
+    }
+    main .search ion-icon.search-icon {
+        top: 12px;
+    }
+    main .select {
+        width: 50%;
+        margin-right: 0px;
+        margin-top: -1px;
+    }
+    main .select.sort {
+        border-radius: 0px 0px 0px 5px;
+        margin-left: 0px;
+    }
+    main .select.filter {
+        border-radius: 0px 0px 5px 0;
+    }
+    .courses {
+        margin-bottom: 0px;
+    }
+
+    .course-box {
+        width: 49%;
+        height: 270px;
+    }
+
+    .course-box:nth-last-child(1) {
+        display: none;
+    }
+}
+@media(min-width:923px) and (max-width:1200px) {
+    .course-box {
+        width: 24%;
+        height: 270px;
+    }
+}
+
+
+/* Start Details Page */
+.course-datails{
+    background-color: #333;
+    margin-top: 15px;
+    position: relative;
+}
+.course-details-text{
+    width: 50%;
+    margin-left: 20%;
+    padding: 30px 0;
+}
+.course-details-text h2{
+    color: var(--brand-secondary);
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.course-details-text h3{
+    text-transform: uppercase;
+    color: var(--bg-body);
+}
+.course-details-text .stars{
+    width: 15%;
+}
+.course-details-text ion-icon{
+    font-size: 12px;
+    margin-right: 0px;
+    color: #E29916;
+}
+.course-details-text p{
+    width: 80%;
+    color: var(--bg-body);
+}
+.course-detail-box{
+    position: absolute;
+    width: 20%;
+    border: 1px solid var(--lines-color);
+    z-index: 1;
+    right: 20%;
+    top: 15%;
+    left: 50%;
+    transform: translate(60%,0%);
+    padding-bottom: 15px;
+}
+.course-detail-box img{
+    width: 100%;
+    height: 150px;
+}
+.course-detail-box-content{
+    background-color: var(--bg-default);
+    margin-top: -6px;
+    padding: 10px;
+}
+.course-detail-box-content p.author{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.course-detail-box-content p.author span{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.course-detail-box-content p.author a{
+    text-decoration: underline;
+    color: var(--brand-primary);
+}
+.course-detail-box-fav{
+    border: 1px solid var(--lines-color);
+    padding: 15px;
+}
+.course-detail-box-fav a{
+    background-color: var(--brand-secondary);
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+.course-detail-box-fav a ion-icon{
+    font-size: 24px;
+}
+.course-detail-box-fav p.cred{
+    color: #929292;
+    text-align: center;
+    font-size: 12px;
+}
+.course-content{
+    border: 1px solid var(--lines-color);
+    width: 35%;
+    margin: 20px 0 30px 24%;
+    border-radius: 5px;
+}
+.course-content h4{
+    font-weight: bold;
+    border-bottom: 1px solid var(--lines-color);
+    padding: 10px 0px 10px 15px;
+}
+/* .course-content h4,.course-content ul{
+    padding: 5px 10px;
+} */
+.course-content h4 span{
+    text-transform: uppercase;
+}
+.course-content ul li{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--lines-color);
+    padding: 12px 0;
+}
+.course-content ul li:nth-last-child(1){
+    border-bottom: none;
+}
+.course-content ul li ion-icon{
+    padding-right: 10px;
+    padding-left: 10px;
+    color: var(--brand-secondary);
+    font-size: 18px;
+    font-weight: bold;
+}
+.course-content ul li a{
+    font-size: 16px;
+    color: var(--body-text);
+    font-weight: 500;
+}
