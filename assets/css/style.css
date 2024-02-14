@@ -79,10 +79,20 @@ header nav .buttons li ion-icon {
 
 /* End Header */
 
+.shapes{
+    height: 55px;
+}
+.shape {
+width: 100vw;
+height: 25vh;
+clip-path: polygon(0 0, 100% 0, 100% 33%, 78% 15%, 60% 3%, 0 32%);
+background: linear-gradient(50deg,var(--brand-primary),var(--brand-secondary));
+}
+
 /* Start Welcome Section */
 .welcome {}
 
-.tri {
+/* .tri {
     display: flex;
     align-items: center;
 }
@@ -101,7 +111,7 @@ header nav .buttons li ion-icon {
     border-top: 0vh solid transparent;
     border-right: 50vw solid var(--brand-secondary);
     border-bottom: 10vh solid transparent;
-}
+} */
 
 .welcome .container {
     display: flex;
@@ -297,23 +307,11 @@ footer ion-icon {
         margin-right: 0px;
         text-align: center;
     }
-
-    .triangle-right {
-        border-bottom: 3vh solid transparent;
+    .shape{
+        height: 15vh;
     }
-
-    .triangle-left {
-        border-bottom: 3vh solid transparent;
-    }
-
-    .welcome .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     .welcome .text {
-        margin-top: 5px;
+        margin-top: -15px;
     }
 
     .welcome h1 {
@@ -376,15 +374,11 @@ footer ion-icon {
     header nav .logo a {
         font-size: 14px;
     } 
-    .triangle-right {
-        border-bottom: 5vh solid transparent;
-    }
-
-    .triangle-left {
-        border-bottom: 5vh solid transparent;
+    .shape{
+        height: 20vh;
     }
     .welcome .text {
-        margin-top: 0px;
+        margin-top: -20px;
     }
     main .search {
         position: relative;
@@ -433,6 +427,12 @@ footer ion-icon {
 
 
 /* Start Details Page */
+body.detail{
+    background-color: var(--bg-body);
+}
+.welcome.detail{
+    background-color: white;
+}
 .course-datails{
     background-color: #333;
     margin-top: 15px;
@@ -507,7 +507,7 @@ footer ion-icon {
     display: block;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 5px 0;
     border-radius: 2px;
@@ -531,9 +531,6 @@ footer ion-icon {
     border-bottom: 1px solid var(--lines-color);
     padding: 10px 0px 10px 15px;
 }
-/* .course-content h4,.course-content ul{
-    padding: 5px 10px;
-} */
 .course-content h4 span{
     text-transform: uppercase;
 }
@@ -557,4 +554,131 @@ footer ion-icon {
     font-size: 16px;
     color: var(--body-text);
     font-weight: 500;
+}
+
+
+/* Media Query For The Details Page */
+@media(min-width:319px) and (max-width:767px) {
+    .course-datails{
+        background-color: #333;
+        margin-top: 15px;
+        position: static;
+        padding-bottom: 20px;
+    }
+    .course-datails .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .course-details-text{
+        width: 100%;
+        margin-left: 0%;
+        padding: 30px 0;
+    }
+    .course-details-text h2{
+        color: var(--brand-secondary);
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+    .course-details-text h3{
+        text-transform: uppercase;
+        color: var(--bg-body);
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    .course-details-text .stars{
+        width: 100%;
+    }
+    .course-details-text ion-icon{
+        font-size: 12px;
+        margin-right: 0px;
+        color: #E29916;
+    }
+    .course-details-text p{
+        width: 100%;
+        color: var(--bg-body);
+    }
+    .course-detail-box{
+        position: static;
+        width: 100%;
+        border: 1px solid var(--lines-color);
+        z-index: 1;
+        right: 0%;
+        top: 0%;
+        left: 0%;
+        transform: translate(0%,0%);
+        padding-bottom: 0px;
+    }
+    .course-details-text p{
+        width: 100%;
+        color: var(--bg-body);
+    }
+    .course-content{
+        width: 95%;
+        margin: 30px auto;
+    }
+}
+
+@media(min-width:768px) and (max-width:1100px) {
+    .course-datails{
+        background-color: #333;
+        margin-top: 15px;
+        position: static;
+        padding-bottom: 20px;
+    }
+    .course-datails .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .course-details-text{
+        width: 50%;
+        margin-left: 0%;
+        padding: 30px 0;
+    }
+    .course-details-text h2{
+        color: var(--brand-secondary);
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+    .course-details-text h3{
+        text-transform: uppercase;
+        color: var(--bg-body);
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    .course-details-text .stars{
+        width: 100%;
+    }
+    .course-details-text ion-icon{
+        font-size: 12px;
+        margin-right: 0px;
+        color: #E29916;
+    }
+    .course-details-text p{
+        width: 100%;
+        color: var(--bg-body);
+    }
+    .course-detail-box{
+        position: static;
+        width: 49%;
+        border: 1px solid var(--lines-color);
+        z-index: 0;
+        right: 0%;
+        top: 0%;
+        left: 0%;
+        transform: translate(0%,0%);
+        padding-bottom: 0px;
+        margin-top: 20px;
+    }
+    .course-details-text p{
+        width: 100%;
+        color: var(--bg-body);
+    }
+    .course-content{
+        width: 90%;
+        margin: 30px auto;
+    }
 }
