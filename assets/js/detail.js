@@ -93,5 +93,6 @@ function tableCourseContent(singleCourse) {
                     </ul>`;
 
   document.getElementById("table-content").innerHTML = tableContent;
+  // console.log(tableContent);
 }
 getData();
