@@ -45,16 +45,22 @@ function displayData() {
         <img src="assets/imgs/courses/${course.image}" alt="">
         <div class="course-box-text">
             <div class = "courses-headings">
-                <h2 class="capitalize">${
-                  course.category.length === 41
-                    ? course.category.substring(0, 30).concat("...")
-                    : course.category
-                }</h2>
-                <h3><a onclick = details(${course.id})>${
+                <h2 class="capitalize">
+                ${
+                  // course.category.length === 41
+                  //   ? course.category.substring(0, 30).concat("...")
+                  //   : course.category
+
+                  course.category
+                }
+                </h2>
+                <h3><a onclick = details(${course.id})>
+                ${
       course.topic.length === 52
         ? course.topic.substring(0, 33).concat("...")
         : course.topic
-    }</a></h3>
+    }
+    </a></h3>
         </div>
         <div class="stars">
             ${starHtml}
@@ -81,3 +87,13 @@ function details(id) {
 
 // Dark
 
+
+// root.style.setProperty('--brand-primary', '#0768AC');
+// root.style.setProperty('--brand-secondary', '#03C180');
+// root.style.setProperty('--bg-default', '#FFF');
+// root.style.setProperty('--bg-body', '#F0F9FF');
+// root.style.setProperty('--lines-color', '#DDD');
+// root.style.setProperty('--body-text', '#333');
+// root.style.setProperty('--heart-color', '#DC143C');
+
+// localStorage.setItem('theme','light')

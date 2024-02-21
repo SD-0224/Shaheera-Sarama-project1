@@ -79,6 +79,7 @@ function tableCourseContent(singleCourse) {
   let subs = singleCourse.subtopics;
   console.log(subs);
   let tableContent = `
+  <div>
     <h4 class="capitalize"> <span>${singleCourse.topic}</span> sub topics</h4>
                     <ul>
                     ${subs
@@ -90,7 +91,9 @@ function tableCourseContent(singleCourse) {
                     </li>`
                       )
                       .join("")}
-                    </ul>`;
+                    </ul>
+                    </div>
+                    `;
 
   document.getElementById("table-content").innerHTML = tableContent;
   // console.log(tableContent);
