@@ -673,21 +673,5 @@
       "Data visualization and reporting"
     ],
     "id": 39
-  },
-  {
-    "category": "Web Development Concepts and Technologies",
-    "rating": 4.07,
-    "name": "Ryan Jones",
-    "image": "analytics.png",
-    "topic": "Web Analytics",
-    "description": "Web analytics is the measurement, collection, analysis, and reporting of web data to understand and optimize web usage. It involves tracking website visitors and their behavior, including how they interact with the site and the content they consume.",
-    "subtopics": [
-      "Data collection methods (e.g., page views, clickstream, event tracking)",
-      "Metrics and KPIs (e.g., bounce rate, conversion rate, time on page)",
-      "Tools and platforms (e.g., Google Analytics, Adobe Analytics, Mixpanel)",
-      "Data analysis techniques (e.g., segmentation, funnel analysis, A/B testing)",
-      "Data visualization and reporting"
-    ],
-    "id": 39
   }
 ]

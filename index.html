@@ -9,6 +9,24 @@
         content="Unlock your potential with our comprehensive IT courses. Explore programming, cybersecurity, networking, and more. Learn from industry experts and earn valuable certifications. Enroll now to advance your career in technology!">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/imgs/code-slash-outline.svg">
+    <style>
+        /* .selcet-container{
+            position: relative;
+            width: 150px;
+            height: 50px;
+            margin-left: 15px;
+        }
+        .selcet-box{
+            position: absolute;
+            border: none;
+            appearance: none;
+            padding: 0 30px 0 15px;
+            width: 100%;
+            position: absolute;
+            background-color: blueviolet;
+            font-size: 20px;
+        } */
+    </style>
 </head>
 
 <body>
@@ -17,10 +35,10 @@
         <div class="container">
             <nav class="flex">
                 <div class="logo">
-                    <a href="index.html">wep topics</a>
+                    <a href="index.html">web topics</a>
                 </div>
                 <ul class="buttons flex">
-                    <li class="flex" id="dark">
+                    <li class="flex dark" id="dark">
                         <ion-icon name="moon-outline"></ion-icon>
                         <a href="" class="dark">dark mode</a>
                     </li>
@@ -57,25 +75,47 @@
                 <ion-icon class="search-icon" name="search-outline"></ion-icon>
                 <input type="search" value="Search the website...">
                 <div class="select sort">
-                    <p>sort by:</p>
-                    <div class="selcet-bottom flex">
-                        <label class="def">default</label>
-                        <ion-icon class="arrow-icon" name="chevron-down-outline"></ion-icon>
+                    <label for="sort">sort by:</label>
+                    <div class="selcet-bottom">
+                        <!-- <label class="def">default</label> -->
+                        <!-- <ion-icon class="arrow-icon" name="chevron-down-outline"></ion-icon> -->
+                        <select name="" id="sort">
+                            <option value="">Default</option>
+                        </select>
                     </div>
-                </div>
+                </div> 
                 <div class="select filter">
+                    <label for="sort">filter by:</label>
+                    <div class="selcet-bottom">
+                        <!-- <label class="def">default</label> -->
+                        <!-- <ion-icon class="arrow-icon" name="chevron-down-outline"></ion-icon> -->
+                        <select name="" id="sort">
+                            <option value="">Default</option>
+                        </select>
+                    </div>
+                </div> 
+                <!-- <div class="select filter">
                     <p>filter by:</p>
                     <div class="selcet-bottom flex">
                         <label for="" class="def">default</label>
                         <ion-icon class="arrow-icon" name="chevron-down-outline"></ion-icon>
                     </div>
-                </div>
+                </div> -->
+                <!-- <div class="select">
+                    <label for="sel">sort by</label>
+                    <div class="select-box">
+                        <select name="" id="">
+                            <option value="">Default</option>
+                        </select>
+                        <ion-icon class="arrow-icon" name="chevron-down-outline"></ion-icon>
+                    </div>
+                </div> -->
             </section>
             <section class="courses">
                 <div class="courses-text">
                     <p class="capitalize">"24" web topic found</p>
                 </div>
-                <div id="courses-content" class="courses-content flex">
+                <div id="courses-content" class="courses-content">
                 </div>
             </section>
         </div>
@@ -87,6 +127,13 @@
     </footer>
     <!-- End Footer -->
 
+    <!-- <div class="selcet-container flex">
+        <select name="" id="" class="selcet-box">
+            <option value="">filter</option>
+            <option value="">filter 2</option>
+        </select>
+       
+    </div> -->
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

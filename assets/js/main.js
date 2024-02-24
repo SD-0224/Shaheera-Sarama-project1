@@ -45,7 +45,7 @@ function displayData() {
         <img src="assets/imgs/courses/${course.image}" alt="">
         <div class="course-box-text">
             <div class = "courses-headings">
-                <h2 class="capitalize">
+                <h2 class="">
                 ${
                   // course.category.length === 41
                   //   ? course.category.substring(0, 30).concat("...")
@@ -54,7 +54,7 @@ function displayData() {
                   course.category
                 }
                 </h2>
-                <h3><a onclick = details(${course.id})>
+                <h3><a href = "details.html">
                 ${
       course.topic.length === 52
         ? course.topic.substring(0, 33).concat("...")
@@ -73,27 +73,4 @@ function displayData() {
   document.getElementById("courses-content").innerHTML = courseContent;
 }
 
-// Course Detail Function
-function details(id) {
-  localStorage.setItem("Cid", id);
-  window.location = "details.html";
-}
 
-// document.getElementById('dark').addEventListener('click',(e)=>{
-//     e.preventDefault();
-//     document.body.style.backgroundColor = '#1A1A1A';
-//     document.body.style.color = '#EDEDED'
-// })
-
-// Dark
-
-
-// root.style.setProperty('--brand-primary', '#0768AC');
-// root.style.setProperty('--brand-secondary', '#03C180');
-// root.style.setProperty('--bg-default', '#FFF');
-// root.style.setProperty('--bg-body', '#F0F9FF');
-// root.style.setProperty('--lines-color', '#DDD');
-// root.style.setProperty('--body-text', '#333');
-// root.style.setProperty('--heart-color', '#DC143C');
-
-// localStorage.setItem('theme','light')
