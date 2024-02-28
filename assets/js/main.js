@@ -1,69 +1,57 @@
+import { theme, showFav } from "./header.js";
+import { getRating } from "./rating.js";
+theme();
+showFav();
 let courses;
+let allCards;
+let loading = document.getElementById("loading");
 
 // Fetch Data Function
 function getData() {
-  fetch("assets/js/topics.json")
+  loading.classList.add("show");
+  fetch("https://tap-web-1.herokuapp.com/topics/list")
     .then(function (response) {
       if (!response.ok) {
+        // loading.classList.add('hide');
         throw new Error("Network response was not ok");
       }
       return response.json();
     })
     .then(function (data) {
       courses = data;
-      displayData();
+      loading.classList.add("hide");
+      displayData(courses);
+    })
+    .then(() => {
+      getCards();
     })
     .catch(function (error) {
-      console.log("There was a problem with the fetch operation:", error);
+      // console.log("There was a problem with the fetch operation:", error);
+      loading.classList.add("hide");
+      document.getElementById("box-msg").style.display = "block";
     });
 }
 
 getData();
 
-// Display The Data Function
-function displayData() {
+function displayData(courses) {
   let courseContent = ``;
   courses.map((course) => {
-    let integerPart = parseInt(course.rating);
-    let decimalPart = course.rating - integerPart;
-    let starHtml = "";
-    for (let i = 0; i < integerPart; i++) {
-      starHtml += '<ion-icon name="star"></ion-icon>';
-    }
-    if (decimalPart >= 0.5) {
-      starHtml += '<ion-icon name="star-half-outline"></ion-icon>';
-      for (let i = 4 - integerPart; i >= 1; i--) {
-        starHtml += '<ion-icon name="star-outline"></ion-icon>';
-      }
-    } else {
-      for (let i = 5 - integerPart; i >= 1; i--) {
-        starHtml += '<ion-icon name="star-outline"></ion-icon>';
-      }
-    }
+    let rating = getRating(course);
     courseContent += `
-    <div class="course-box">
+    <div class="course-box" id="${course.id}">
         <img src="assets/imgs/courses/${course.image}" alt="">
         <div class="course-box-text">
             <div class = "courses-headings">
                 <h2 class="">
-                ${
-                  // course.category.length === 41
-                  //   ? course.category.substring(0, 30).concat("...")
-                  //   : course.category
-
-                  course.category
-                }
+                ${course.category}
                 </h2>
-                <h3><a href = "details.html">
-                ${
-      course.topic.length === 52
-        ? course.topic.substring(0, 33).concat("...")
-        : course.topic
-    }
+                <h3><a href = "">
+                ${course.topic}
     </a></h3>
         </div>
         <div class="stars">
-            ${starHtml}
+            ${rating}
         </div>
         <p class="capitalize">author: ${course.name}</p>
         </div>
@@ -73,4 +61,12 @@ function displayData() {
   document.getElementById("courses-content").innerHTML = courseContent;
 }
 
-
+function getCards() {
+  allCards = document.querySelectorAll(".course-box");
+  allCards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      let cid = card.getAttribute("id");
+      location.href = `details.html?id=${cid}`;
+    });
+  });
+}

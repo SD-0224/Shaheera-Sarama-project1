@@ -9,24 +9,6 @@
         content="Unlock your potential with our comprehensive IT courses. Explore programming, cybersecurity, networking, and more. Learn from industry experts and earn valuable certifications. Enroll now to advance your career in technology!">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/imgs/code-slash-outline.svg">
-    <style>
-        /* .selcet-container{
-            position: relative;
-            width: 150px;
-            height: 50px;
-            margin-left: 15px;
-        }
-        .selcet-box{
-            position: absolute;
-            border: none;
-            appearance: none;
-            padding: 0 30px 0 15px;
-            width: 100%;
-            position: absolute;
-            background-color: blueviolet;
-            font-size: 20px;
-        } */
-    </style>
 </head>
 
 <body>
@@ -38,12 +20,12 @@
                     <a href="index.html">web topics</a>
                 </div>
                 <ul class="buttons flex">
-                    <li class="flex dark" id="dark">
+                    <li class="flex dark" id="theme">
                         <ion-icon name="moon-outline"></ion-icon>
-                        <a href="" class="dark">dark mode</a>
+                        <a href="" class="dark" id="themeText">dark mode</a>
                     </li>
-                    <li class="flex">
-                        <ion-icon name="heart-outline"></ion-icon>
+                    <li class="flex" id="favButton">
+                        <ion-icon name="heart-outline"><a href="favourites.html"></a></ion-icon>
                         <a href="favourites.html" class="fav">favourites</a>
                     </li>
                 </ul>
@@ -101,17 +83,31 @@
         </div>
     </main>
     <!--End Main  -->
+
+    <div class="box-msg" id="box-msg">
+        <p>Something went wrong. Web topics failed to load</p>
+    </div>
+    <img src="assets/imgs/giphy.gif" class="loading" alt="" id="loading">
+
+    
     <!-- Start Footer -->
     <footer>
         <p><span class="capitalize">developed</span> with <ion-icon name="heart"></ion-icon> &copy; 2024</p>
     </footer>
     <!-- End Footer -->
 
+    <section class="favourites" id="favourites">
+        <div class="container">
+            <h2 class="capitalize">my favourites topics</h2>
+            <div class="favourites-content" id="favContent">
+            </div>
+        </div>
+    </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="assets/js/topics.json"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/dark.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="assets/js/main.js" type="module"></script>
+    <script type="module" src="assets/js/fav.js"></script>
 </body>
 
 </html>

@@ -20,12 +20,12 @@
                     <a href="index.html">web topics</a>
                 </div>
                 <ul class="buttons flex">
-                    <li class="flex dark" id="dark">
+                    <li class="flex dark" id="theme">
                         <ion-icon name="moon-outline"></ion-icon>
-                        <a href="" class="dark">dark mode</a>
+                        <a href="" class="dark" id="themeText">dark mode</a>
                     </li>
-                    <li class="flex">
-                        <ion-icon name="heart-outline"></ion-icon>
+                    <li class="flex" id="favButton">
+                        <ion-icon name="heart-outline"><a href="favourites.html"></a></ion-icon>
                         <a href="favourites.html" class="fav">favourites</a>
                     </li>
                 </ul>
@@ -54,80 +54,63 @@
     <!-- start Course-Datails Section -->
     <section class="course-datails">
         <div class="container" id="course-datails">
-            <div class="course-details-text">
-                <h2>Web Development Languages</h2>
-                <h3>HTML</h3>
-                <div class="stars">
-                    <ion-icon name="star" role="img" class="md hydrated"></ion-icon><ion-icon name="star" role="img"
-                        class="md hydrated"></ion-icon><ion-icon name="star" role="img"
-                        class="md hydrated"></ion-icon><ion-icon name="star" role="img"
-                        class="md hydrated"></ion-icon><ion-icon name="star-outline" role="img"
-                        class="md hydrated"></ion-icon>
-                </div>
-                <p class="course-desc">
-                    HTML (Hypertext Markup Language) is the standard markup language for creating web pages and other
-                    information that can be displayed in a web browser. It provides a structure for content and defines
-                    how it should be displayed on a web page, including text, images, and multimedia. HTML is essential
-                    for creating static web pages and is a foundational technology for the World Wide Web.
-                </p>
-            </div>
+        </div> 
+    </section>
 
-            <div class="course-detail-box">
-                <img src="assets/imgs/courses/html.png" alt="">
-                <div class="course-detail-box-content">
-                    <p class="author"><span>HTML</span> by <a href="" class="capitalize">Sarah Smith</a></p>
-                    <div class="course-detail-box-fav">
-                        <p><span class="capitalize">i</span>ntreseted about this topic?</p>
-                        <a href="" class="capitalize">add to favourite <ion-icon name="heart-outline" role="img"
-                                class="md hydrated"></ion-icon></a>
-                        <p class="cred capitalize">unlimted credits</p>
+    <section class="course-content" id="table-content">
+        
+    </section>
+    <!-- Start Footer -->
+
+    <div class="box-msg" id="box-msg">
+        <p>Something went wrong. Web topics failed to load</p>
+    </div>
+    <img src="assets/imgs/giphy.gif" class="loading" alt="" id="loading">
+
+    <footer>
+        <p><span class="capitalize">developed</span> with <ion-icon name="heart"></ion-icon> &copy; 2024</p>
+    </footer>
+    <!-- End Footer -->
+
+    <section class="favourites" id="favourites">
+        <div class="container">
+            <h2 class="capitalize">my favourites topics</h2>
+            <div class="favourites-content">
+                <div class="favourites-content-box">
+                    <img src="assets/imgs/courses/react.webp" alt="">
+                    <div class="favourites-text">
+                        <h3 class="capitalize">react</h3>
+                        <div class="stars">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="favourites-content-box">
+                    <img src="assets/imgs/courses/css.webp" alt="">
+                    <div class="favourites-text">
+                        <h3 class="capitalize">css</h3>
+                        <div class="stars">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="course-content" id="table-content">
-        <div>
-            <h4 class="capitalize"> <span>HTML</span> sub topics</h4>
-            <ul>
-
-                <li>
-                    <ion-icon name="checkmark-circle-outline" role="img" class="md hydrated"></ion-icon>
-                    <a href="">HTML syntax and structure</a>
-                </li>
-                <li>
-                    <ion-icon name="checkmark-circle-outline" role="img" class="md hydrated"></ion-icon>
-                    <a href="">HTML elements and attributes</a>
-                </li>
-                <li>
-                    <ion-icon name="checkmark-circle-outline" role="img" class="md hydrated"></ion-icon>
-                    <a href="">HTML forms and input elements</a>
-                </li>
-                <li>
-                    <ion-icon name="checkmark-circle-outline" role="img" class="md hydrated"></ion-icon>
-                    <a href="">HTML tables and lists</a>
-                </li>
-                <li>
-                    <ion-icon name="checkmark-circle-outline" role="img" class="md hydrated"></ion-icon>
-                    <a href="">HTML multimedia elements (audio, video, images)</a>
-                </li>
-                <li>
-                    <ion-icon name="checkmark-circle-outline" role="img" class="md hydrated"></ion-icon>
-                    <a href="">HTML accessibility and semantic markup</a>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- Start Footer -->
-    <footer>
-        <p><span class="capitalize">developed</span> with <ion-icon name="heart"></ion-icon> &copy; 2024</p>
-    </footer>
-    <!-- End Footer -->
-
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="assets/js/dark.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/details.js"></script>
 </body>
 
 </html>

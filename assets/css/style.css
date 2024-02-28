@@ -303,6 +303,37 @@ footer ion-icon {
 }
 /* End footer */
 
+/* Box-msg */
+.box-msg{
+    background-color: #DC3545;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    display: none;
+}
+.loading{
+    width: 20%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+#favourites{
+    display: none;
+}
 /* Small Screen */
 @media(max-width:767px) {
     header nav .logo a {
@@ -367,15 +398,11 @@ footer ion-icon {
         margin-left: 0px;
         border-left: 1px solid var(--lines-color);
     }
-
-    
     .courses {
         margin-bottom: 0px;
     }
     .courses-content {
-        /* flex-wrap: wrap; */
         display: grid;
-        /* grid-template-columns: repeat(1,1fr); */
         gap: 10px;
     }
 
@@ -430,9 +457,7 @@ footer ion-icon {
         margin-bottom: 0px;
     }
     .courses-content {
-        /* flex-wrap: wrap; */
         display: grid;
-        /* grid-template-columns: repeat(3,minmax(200px,1fr)); */
         gap: 10px;
     }
 }
@@ -717,23 +742,21 @@ header{
     color: var(--body-text);
 }
 .favourites .favourites-content{
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(80px,180px));
+    gap: 10px;
 }
 .favourites .favourites-content-box{
-    width: 12%;
+    /* width: 12%; */
     border: 1px solid var(--lines-color);
     box-shadow: 0 0 10px var(--lines-color);
     border-radius: 5px;
-    margin-right: 10px;
     height: 110px;
 }
 .favourites img{
     width: 100%;
     border-radius: 5px 5px 0 0;
     height: 60px;
-    /* object-fit: contain; */
 }
 .favourites-text{
     padding-left: 5px;
@@ -743,18 +766,18 @@ header{
     color: var(--body-text);
 }
 .favourites-text .stars{
-    width: 90%;
+    width: 100%;
     padding-bottom: 5px;
 }
 .favourites-text ion-icon{
     color: #E29916;
     font-size: 12px;
-    margin-right: -5px;
+    margin-right: 0px;
     font-weight: bold;
 }
 
 /* media */
-@media(max-width:521px){
+/* @media(max-width:521px){
     .favourites .favourites-content-box{
         width: 25%;
     }
@@ -769,4 +792,4 @@ header{
     .favourites .favourites-content-box{
         width: 15%;
     }
-}
+} */
