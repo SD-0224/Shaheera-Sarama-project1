@@ -145,6 +145,7 @@ main .search input {
     border-radius: 5px 0 0 5px;
     color: #929292;
     height: 45px;
+    outline: none;
 }
 
 main .search ion-icon.search-icon {
@@ -180,6 +181,13 @@ main .selcet-bottom select{
     color: var(--body-text);
     margin-left: -3px;
     font-family: 'Nunito Sans', sans-serif;
+}
+select{
+    outline: none;
+}
+select option{
+    color: var(--body-text);
+    background-color: var(--bg-default);
 }
 /* main .search label.def {
     font-weight: 500;
@@ -259,16 +267,11 @@ main ion-icon.arrow-icon {
 }
 
 .course-box-text h3 {
-    line-height: 1;
     margin-bottom: 15px;
-}
-
-.course-box-text h3 a {
     color: var(--body-text);
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
 }
-
 .course-box-text .stars {
     margin: 10px 0 10px;
 }
@@ -734,6 +737,7 @@ header{
     padding: 5px 0;
     position: sticky;
     bottom: 0;
+    z-index: 2;
 }
 .favourites h2{
     font-size: 13px;
@@ -775,7 +779,9 @@ header{
     margin-right: 0px;
     font-weight: bold;
 }
-
+#favContent{
+    color: var(--body-text);
+}
 /* media */
 /* @media(max-width:521px){
     .favourites .favourites-content-box{
