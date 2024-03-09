@@ -58,6 +58,8 @@ every listenrt needd to call this function
 let searchInput = document.getElementById("searchInput");
 let sortBy = document.getElementById("sort");
 let filterSelect = document.getElementById("filter");
+let debounceTimeout;
+
 
 async function search(topic, sort, filter) {
     try {
@@ -92,8 +94,15 @@ async function applySearchFilters() {
     drawingData(result);
 }
 
+function debounceSearch() {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+        applySearchFilters();
+    }, 300); // Debounce time in milliseconds (300ms)
+}
+
 searchInput.addEventListener('keyup', () => {
-    applySearchFilters();
+    debounceSearch();
 });
 
 sortBy.addEventListener('change', () => {
@@ -103,3 +112,6 @@ sortBy.addEventListener('change', () => {
 filterSelect.addEventListener('change', () => {
     applySearchFilters();
 });
+
+
+
